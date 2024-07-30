@@ -18,7 +18,7 @@ alt.themes.enable("dark")
 
 #######################
 # Load data
-df_reshaped = pd.read_csv('data/us-population-2010-2019-reshaped.csv')
+df_reshaped = pd.read_csv('https://raw.githubusercontent.com/dataprofessor/dashboard-v3/master/data/us-population-2010-2019.csv')
 
 
 #######################
