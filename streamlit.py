@@ -82,6 +82,11 @@ states_abbreviation = {
 
 df['states_code'] = [states_abbreviation[x] for x in df.states]
 
+#
+new_columns = ['states', 'states_code', 'id', '2010', '2011', '2012', '2013', '2014', '2015', '2016',
+       '2017', '2018', '2019']
+df = df.reindex(columns=new_columns)
+
 # Reshape the DataFrame
 df_reshaped = pd.melt(df, id_vars=['states', 'states_code', 'id'], var_name='year', value_name='population')
 
