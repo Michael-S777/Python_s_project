@@ -18,7 +18,7 @@ alt.themes.enable("dark")
 
 #######################
 # Load data
-df = pd.read_csv('data/us-population-2010-2019-reshaped.csv')
+df = pd.read_csv('https://raw.githubusercontent.com/dataprofessor/dashboard-v3/master/data/us-population-2010-2019.csv')
 # Reshape the DataFrame
 df_reshaped = pd.melt(df, id_vars=['states', 'states_code', 'id'], var_name='year', value_name='population')
 
