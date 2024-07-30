@@ -18,8 +18,16 @@ alt.themes.enable("dark")
 
 #######################
 # Load data
-df_reshaped = pd.read_csv('data/us-population-2010-2019-reshaped.csv')
+df = pd.read_csv('data/us-population-2010-2019-reshaped.csv')
+# Reshape the DataFrame
+df_reshaped = pd.melt(df, id_vars=['states', 'states_code', 'id'], var_name='year', value_name='population')
 
+# Convert 'year' column values to integers
+df_reshaped['states'] = df_reshaped['states'].astype(str)
+df_reshaped['year'] = df_reshaped['year'].astype(int)
+df_reshaped['population'] = df_reshaped['population'].str.replace(',', '').astype(int)
+
+df_reshaped
 
 #######################
 # Sidebar
